@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean Canvas - Workspace untuk Mahasiswa</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .canvas-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .canvas-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .canvas-header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        
+        .canvas-header p {
+            margin: 10px 0 0 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .lean-canvas {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 0;
+            background: #f8f9fa;
+        }
+        
+        .canvas-section {
+            padding: 20px;
+            border: 2px solid #e9ecef;
+            background: white;
+            min-height: 280px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .canvas-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .section-content {
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #34495e;
+        }
+        
+        .section-content ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+        
+        .section-content li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        .section-content li::marker {
+            color: #3498db;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+        .metric {
+            background: #e8f4fd;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 5px 0;
+            border-left: 4px solid #3498db;
+        }
+        
+        .problem {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+        
+        .solution {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        .value-prop {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            grid-column: span 1;
+        }
+        
+        .advantage {
+            background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);
+        }
+        
+        .segments {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+        }
+        
+        .channels {
+            background: linear-gradient(135deg, #fdbb2d 0%, #22c1c3 100%);
+        }
+        
+        .revenue {
+            background: linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%);
+        }
+        
+        .cost {
+            background: linear-gradient(135deg, #c2e9fb 0%, #a1c4fd 100%);
+        }
+        
+        .metrics {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .canvas-footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 1200px) {
+            .lean-canvas {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            
+            .value-prop {
+                grid-column: span 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .lean-canvas {
+                grid-template-columns: 1fr;
+            }
+            
+            .canvas-section {
+                min-height: 200px;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="canvas-container">
+        <div class="canvas-header">
+            <h1>🚀 Lean Canvas</h1>
+            <p>Workspace Co-working untuk Mahasiswa Teknik Informatika</p>
+        </div>
+        
+        <div class="lean-canvas">
+            <!-- Row 1 -->
+            <div class="canvas-section problem">
+                <div class="section-title">🎯 Problem</div>
+                <div class="section-content">
+                    <ul>
+                        <li><span class="highlight">Kesulitan mencari ruang kerja kondusif</span> - 85% mahasiswa mengalami kesulitan</li>
+                        <li><span class="highlight">Perpustakaan terlalu ramai</span> dan keterbatasan waktu operasional</li>
+                        <li><span class="highlight">Lingkungan kos penuh distraksi</span> - suara, gangguan teman</li>
+                        <li><span class="highlight">Produktivitas menurun</span> akibat lingkungan tidak mendukung</li>
+                        <li><span class="highlight">Sulit fokus</span> untuk tugas individu maupun kelompok</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-section solution">
+                <div class="section-title">💡 Solution</div>
+                <div class="section-content">
+                    <ul>
+                        <li><span class="highlight">Workspace khusus mahasiswa</span> dengan berbagai konsep ruang</li>
+                        <li><span class="highlight">Silent Zone</span> untuk fokus maksimal</li>
+                        <li><span class="highlight">Collaborative Area</span> untuk kerja kelompok</li>
+                        <li><span class="highlight">Fasilitas lengkap:</span> WiFi cepat, meja ergonomis, colokan listrik</li>
+                        <li><span class="highlight">Layanan tambahan:</span> printing, book rental, F&B sehat</li>
+                        <li><span class="highlight">Program produktivitas:</span> workshop, mentoring, seminar</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-section value-prop">
+                <div class="section-title">🎁 Unique Value Proposition</div>
+                <div class="section-content">
+                    <div class="highlight" style="font-size: 1.1em; text-align: center; padding: 15px; margin-bottom: 15px;">
+                        "Ecosystem Produktivitas Terintegrasi untuk Mahasiswa Teknik"
+                    </div>
+                    <ul>
+                        <li><strong>Fleksibilitas ruang:</strong> Sesuai preferensi introvert/extrovert</li>
+                        <li><strong>Harga terjangkau:</strong> Rp 10-30k/hari, membership bulanan</li>
+                        <li><strong>Lokasi strategis:</strong> Dekat kampus PENS</li>
+                        <li><strong>Komunitas supportif:</strong> Networking sesama mahasiswa IT</li>
+                        <li><strong>All-in-one solution:</strong> Belajar + berkembang + berkarya</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-section advantage">
+                <div class="section-title">🏆 Unfair Advantage</div>
+                <div class="section-content">
+                    <ul>
+                        <li><span class="highlight">Deep understanding</span> mahasiswa IT PENS melalui survei komprehensif</li>
+                        <li><span class="highlight">Partnership eksklusif</span> dengan cafe sekitar kampus</li>
+                        <li><span class="highlight">Teknologi terintegrasi</span> - aplikasi booking + payment</li>
+                        <li><span class="highlight">Network effect</span> dari komunitas mahasiswa</li>
+                        <li><span class="highlight">First mover advantage</span> di niche workspace mahasiswa IT</li>
+                        <li><span class="highlight">Data-driven approach</span> berdasarkan riset mendalam</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-section segments">
+                <div class="section-title">👥 Customer Segments</div>
+                <div class="section-content">
+                    <div class="metric">
+                        <strong>Primary Target:</strong><br>
+                        Mahasiswa Teknik Informatika PENS
+                    </div>
+                    <ul>
+                        <li><strong>Program Studi:</strong> D3/D4 Teknik Informatika, D4 Sains Data</li>
+                        <li><strong>Angkatan:</strong> 2021-2024</li>
+                        <li><strong>Demografi:</strong> Tinggal di kos/kontrakan</li>
+                        <li><strong>Psikografi:</strong> Mudah distraksi, butuh ruang kondusif</li>
+                        <li><strong>Budget:</strong> Uang saku 1-2 juta/bulan</li>
+                        <li><strong>Behavior:</strong> Sering kerja di luar rumah 1-5x/minggu</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Row 2 -->
+            <div class="canvas-section channels">
+                <div class="section-title">📢 Channels</div>
+                <div class="section-content">
+                    <ul>
+                        <li><span class="highlight">Digital Marketing:</span>
+                            <ul style="margin-top: 5px;">
+                                <li>Instagram & TikTok campaigns</li>
+                                <li>Mobile app + website booking</li>
+                                <li>WhatsApp groups mahasiswa</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Campus Marketing:</span>
+                            <ul style="margin-top: 5px;">
+                                <li>Partnership dengan organisasi mahasiswa</li>
+                                <li>Stand promosi di area kampus</li>
+                                <li>Influencer mahasiswa senior</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Strategic Partnership:</span>
+                            <ul style="margin-top: 5px;">
+                                <li>Integrasi dengan cafe partner</li>
+                                <li>Referral program</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-section revenue">
+                <div class="section-title">💰 Revenue Streams</div>
+                <div class="section-content">
+                    <div class="metric">
+                        <strong>Primary Revenue:</strong><br>
+                        Rp 25-45 juta/bulan (proyeksi)
+                    </div>
+                    <ul>
+                        <li><span class="highlight">Daily Pass:</span> Rp 10-30k/hari</li>
+                        <li><span class="highlight">Monthly Membership:</span> Rp 200-350k/bulan</li>
+                        <li><span class="highlight">Meeting Room:</span> Rp 50-100k/sesi</li>
+                        <li><span class="highlight">Additional Services:</span>
+                            <ul style="margin-top: 5px;">
+                                <li>Printing & scanning</li>
+                                <li>Book rental</li>
+                                <li>F&B sales</li>
+                                <li>Workshop & seminar</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Partnership Revenue:</span> Komisi dari cafe partner</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-section cost">
+                <div class="section-title">💸 Cost Structure</div>
+                <div class="section-content">
+                    <div class="metric">
+                        <strong>Monthly Operating Cost:</strong><br>
+                        Rp 15-25 juta/bulan
+                    </div>
+                    <ul>
+                        <li><span class="highlight">Fixed Costs:</span>
+                            <ul style="margin-top: 5px;">
+                                <li>Sewa tempat: Rp 8-12 juta</li>
+                                <li>Utilities: Rp 2-3 juta</li>
+                                <li>Staff salary: Rp 4-6 juta</li>
+                                <li>Insurance: Rp 500k</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Variable Costs:</span>
+                            <ul style="margin-top: 5px;">
+                                <li>Internet & technology: Rp 1 juta</li>
+                                <li>Marketing: Rp 2-3 juta</li>
+                                <li>Supplies & maintenance: Rp 1 juta</li>
+                            </ul>
+                        </li>
+                        <li><span class="highlight">Initial Investment:</span> Rp 100-150 juta</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="canvas-section metrics">
+                <div class="section-title">📊 Key Metrics</div>
+                <div class="section-content">
+                    <div class="metric">
+                        <strong>Success Indicators:</strong>
+                    </div>
+                    <ul>
+                        <li><span class="highlight">Occupancy Rate:</span> Target 60-70%</li>
+                        <li><span class="highlight">Monthly Active Users:</span> 200-300 mahasiswa</li>
+                        <li><span class="highlight">Customer Retention:</span> 70% membership renewal</li>
+                        <li><span class="highlight">Average Revenue Per User:</span> Rp 150k/bulan</li>
+                        <li><span class="highlight">Break Even Point:</span> Bulan ke-8</li>
+                        <li><span class="highlight">Customer Acquisition Cost:</span> < Rp 50k</li>
+                        <li><span class="highlight">Net Promoter Score:</span> > 8.0</li>
+                        <li><span class="highlight">Daily Utilization:</span> 8-10 jam/hari</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="canvas-footer">
+            <p><strong>Workspace for Tech Students</strong> | Lean Canvas v1.0 | Target Launch: Q2 2024</p>
+            <p>💡 "Menciptakan ekosistem produktivitas yang mendukung kesuksesan akademik mahasiswa teknologi"</p>
+        </div>
+    </div>
+</body>
+</html>
